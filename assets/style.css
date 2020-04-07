@@ -1,0 +1,134 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    background-color: #030e14;
+    color: #fff;
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.controls {
+    padding: 10px;
+    background-color: #0b2431;
+}
+
+.controls .logo {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.controls .switch {
+    vertical-align: middle;
+    display: inline-block;
+    margin-right: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    background: rgb(54,106,134);
+    background: linear-gradient(180deg, rgba(54,106,134,1) 0%, rgba(30,90,99,1) 100%);
+    box-shadow: 0 0 5px #366a86 inset;
+    cursor: pointer;
+}
+
+.controls .switch:hover {
+    background: linear-gradient(180deg, rgba(44,86,114,1) 0%, rgba(20,80,89,1) 100%);
+}
+
+.controls .switch.active, .controls .switch.active:hover {
+    background: linear-gradient(180deg, rgba(54,134,93,1) 0%, rgba(30,99,65,1) 100%);
+}
+
+.galaxy-view.active, .system-view.active, .fleet-view.active {
+    display: block;
+}
+
+.galaxy-view, .system-view, .fleet-view {
+    display: none;
+    padding: 10px;
+}
+
+.galaxy-view .galaxy, .fleet-view .fleet {
+    vertical-align: top;
+    display: inline-block;
+    padding: 20px;
+    margin: 10px;
+    width: 100%;
+    max-width: 300px;
+    background-color: #0b2431;
+}
+
+.galaxy-view .player, .fleet-view .player {
+    position: relative;
+    margin-top: 5px;
+    cursor: default;
+}
+
+.galaxy-view .player.vacation, .fleet-view .player.vacation {
+    color: #7fdbdc;
+}
+
+.galaxy-view .player span {
+    opacity: .7;
+    font-size: 12px;
+}
+
+.galaxy-view .player:hover .tooltip, .fleet-view .player:hover .tooltip {
+    display: block;
+}
+
+.galaxy-view .fleet .name, .fleet-view .fleet .officer {
+    padding-bottom: 5px;
+    font-size: 12px;
+    opacity: .7;
+}
+
+.system-view .galaxy {
+    padding: 20px;
+    margin: 10px;
+    background-color: #0b2431;
+}
+
+.system-view .system {
+    vertical-align: top;
+    display: inline-block;
+    padding: 5px;
+    width: 50px;
+    font-size: 10px;
+}
+
+.system-view .system:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+.system-view .system .planet.id {
+    opacity: .4;
+}
+
+.system-view .system .planet.name {
+    word-break: break-all;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.system-view .system:hover .planet.name {
+    position: relative;
+    z-index: 100;
+    overflow: initial;
+}
+
+.map .title {
+    padding-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.tooltip {
+    display: none;
+    position: absolute;
+    top: 100%;
+    padding: 10px;
+    background-color: rgba(0, 0, 0, .8);
+    border-radius: 5px;
+    z-index: 10;
+}
