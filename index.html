@@ -22,7 +22,7 @@
 
     <script type="text/x-template" id="GalaxyView">
         <div class="galaxy-view" :class="$root.$data.activeView === 'galaxy' ? 'active' : ''">
-            <div class="galaxy" v-for="(galaxy, i) in galaxyViewData" v-once>
+            <div class="galaxy" v-for="(galaxy, i) in $root.$data.galaxyViewData" v-once>
                 <div class="title">Galaxy {{ i + 1 }}</div>
                 <div class="player" v-for="(player, name) in galaxy" :class="player.player.state === 0 ? 'vacation' : ''">
                     {{ name }} <span>({{ player.count }} planet{{ player.count > 1 ? 's' : '' }}, {{player.moonCount}} moon{{ player.moonCount !== 1 ? 's' : '' }})</span>
@@ -36,7 +36,7 @@
 
     <script type="text/x-template" id="SystemView">
         <div class="system-view" :class="$root.$data.activeView === 'system' ? 'active' : ''">
-            <div class="galaxy" v-for="galaxy in map" v-once>
+            <div class="galaxy" v-for="galaxy in $root.$data.map" v-once>
                 <div class="title">Galaxy {{ galaxy.galaxy }}</div>
                 <div class="system" v-for="system in galaxy.systems">
                     <div class="planet id">{{ galaxy.galaxy + ':' + system.system }}</div>
