@@ -266,13 +266,9 @@
                                     if (parseInt(location[2]) === map[g].systems[s].planets[p].planet) {
                                         map[g].systems[s].planets[p].player = player;
                                         map[g].systems[s].hasPlayer = true;
-
                                         // Check whether our player has a moon at this location
-                                        for (var m = 0; m < player.planets.length; m++) {
-                                            if (player.planets[m] == planet) {
-                                                map[g].systems[s].planets[p].hasMoon = true;
-                                                break;
-                                            }
+                                        if (location[2].endsWith("m")) {
+                                            map[g].systems[s].planets[p].hasMoon = true;
                                         }
                                     }
                                 }
