@@ -4,7 +4,10 @@ name: CI
 
 on:
   schedule:
-  - cron: "0 2 * * 1-5"
+    - cron: "0 4 * * *"
+  push:
+    branches:
+      - master
 
 jobs:
   build:
@@ -13,8 +16,15 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: Run a multi-line script
-      run: sh build.sh
+    - name: wget
+      uses: wei/wget@v1
+      with:
+        args: -O api/players.xml https://s166-en.ogame.gameforge.com/api/players.xml
+
+    - name: wget
+        uses: wei/wget@v1
+        with:
+          args: -O api/planets.xml https://s166-en.ogame.gameforge.com/api/planets.xml
         
     - name: Deploy
       uses: crazy-max/ghaction-github-pages@v1

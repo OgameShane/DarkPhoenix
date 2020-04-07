@@ -1,0 +1,1 @@
+This directory will contain cache OGame XML api responses
