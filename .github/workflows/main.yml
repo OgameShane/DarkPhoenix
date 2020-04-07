@@ -16,12 +16,12 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: wget
+    - name: Load player.xml
       uses: wei/wget@v1
       with:
         args: -O api/players.xml https://s166-en.ogame.gameforge.com/api/players.xml
 
-    - name: wget
+    - name: Load universe.xml
       uses: wei/wget@v1
       with:
         args: -O api/universe.xml https://s166-en.ogame.gameforge.com/api/universe.xml
