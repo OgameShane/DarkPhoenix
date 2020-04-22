@@ -12,6 +12,7 @@
             <div v-for="view in $root.$data.views" class="switch" :class="$root.$data.activeView === view ? 'active' : ''" @click="changeView(view)">{{ view }} view</div>
             <select @change="loadAlliance">
                 <option selected value="500020">Dark Phoenix [DKPHNX]</option>
+                <option value="500354">Phoenix Rising</option>
                 <option value="500019">Hogwarts [HOG]</option>
                 <option value="500132">Vandals [VAN]</option>
                 <option value="500148">NamoAmitabha [Amitabha]</option>
